@@ -13,9 +13,8 @@
 
     <EditText
         android:id="@+id/plainNoteEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="160dp"
-        android:layout_marginTop="0dp"
         android:gravity="top|start"
         android:inputType="textMultiLine"
         android:paddingLeft="8dp"
