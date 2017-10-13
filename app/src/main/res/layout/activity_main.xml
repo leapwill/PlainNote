@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.leapwill.plainnote.MainActivity">
+
+    <LinearLayout
+        android:layout_width="344dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <EditText
+            android:id="@+id/plainNoteEditText"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:layout_width="240dp"
+            android:layout_height="80dp"
+            android:onClick="saveNote"
+            android:text="Save"
+            tools:layout_editor_absoluteX="344dp"
+            tools:layout_editor_absoluteY="41dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
