@@ -5,33 +5,52 @@
     android:id="@+id/plainNoteRootConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="8dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="8dp"
+    android:layout_margin="0dp"
+    android:padding="0dp"
     tools:context="com.leapwill.plainnote.MainActivity">
 
     <EditText
         android:id="@+id/plainNoteEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:gravity="top|start"
-        android:inputType="textMultiLine"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingTop="4dp"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:background="#dd222222"
+        android:textColor="@color/colorText"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
 
-    <Button
-        android:id="@+id/plainNoteSaveButton"
-        android:layout_width="240dp"
+    <LinearLayout
+        android:id="@+id/plainNoteButtonLayout"
+        android:layout_width="0dp"
         android:layout_height="80dp"
-        android:onClick="saveNote"
-        android:text="Save"
         app:layout_constraintLeft_toLeftOf="@+id/plainNoteEditText"
-        app:layout_constraintTop_toBottomOf="@+id/plainNoteEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/plainNoteEditText"
+        app:layout_constraintRight_toRightOf="@+id/plainNoteEditText" >
+
+        <Button
+            android:id="@+id/plainNoteSaveButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8"
+            android:background="@drawable/save_button"
+            android:onClick="saveNote"
+            android:text="Save"
+            android:textColor="@color/colorText" />
+
+        <ImageButton
+            android:id="@+id/plainNoteSettingsButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/ic_settings_48dp"
+            android:contentDescription="Settings"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
