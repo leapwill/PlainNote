@@ -1,5 +1,6 @@
 package com.leapwill.plainnote;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
@@ -18,6 +19,7 @@ public class WidgetProvider extends AppWidgetProvider {
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_provider);
         views.setTextViewText(R.id.plainNoteWidgetTextView, context.getSharedPreferences("com.leapwill.plainnote", 0).getString("com.leapwill.plainnote.text", ""));
+        views.setOnClickPendingIntent(R.id.plainNoteWidgetTextView, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -33,7 +35,9 @@ public class WidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
-        // Enter relevant functionality for when the first widget is created
+        // Enter relevant functionality for when the first widget is created and for boot
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+        this.onUpdate(context, appWidgetManager, appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class)));
     }
 
     @Override

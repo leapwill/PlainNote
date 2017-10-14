@@ -6,6 +6,6 @@ Based on [Jot by hellos3b](https://play.google.com/store/apps/details?id=com.sim
 ## To do:
 1. ~~Load and save a multi-line plain text message.~~
 2. ~~Create a flexible launcher widget to display the message.~~
-3. Create an icon and widget preview.
-4. Publish on Play Store as minimum viable product?
-5. Extend functionality by adding appearance customization options.
+3. ~~Create an icon and widget preview.~~
+4. Extend functionality by adding appearance customization options.
+5. Consider publishing on Play Store or F-Droid, or announcing in /r/Android's APPreciation thread
