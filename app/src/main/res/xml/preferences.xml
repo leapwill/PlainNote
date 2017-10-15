@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.rarepebble.colorpicker.ColorPreference
+        android:key="plainNotePrefBGColor"
+        android:title="Background color"
+        android:defaultValue="#dd222222"
+        app:colorpicker_selectNoneButtonText="Default" />
+
+    <com.rarepebble.colorpicker.ColorPreference
+        android:key="plainNotePrefTextColor"
+        android:title="Text color"
+        android:defaultValue="#ffffffff"
+        app:colorpicker_selectNoneButtonText="Default"
+        app:colorpicker_showAlpha="false" />
+
+</PreferenceScreen>
