@@ -1,18 +1,14 @@
 package com.leapwill.plainnote;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.ContextThemeWrapper;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-public class SettingsFragment extends PreferenceFragment {
+import androidx.annotation.Nullable;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+
+import com.rarepebble.colorpicker.ColorPreference;
+
+public class SettingsFragment extends PreferenceFragmentCompat {
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -30,4 +26,16 @@ public class SettingsFragment extends PreferenceFragment {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
     }
+
+    @Override
+    public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+    }
+
+    @Override
+    public void onDisplayPreferenceDialog(Preference preference) {
+        if (preference instanceof ColorPreference) {
+            ((ColorPreference) preference).showDialog(this, 0);
+        } else super.onDisplayPreferenceDialog(preference);
+    }
+
 }

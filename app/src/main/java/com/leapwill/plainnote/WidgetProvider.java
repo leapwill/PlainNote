@@ -7,7 +7,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.widget.RemoteViews;
 
 /**
@@ -24,7 +24,7 @@ public class WidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.plainNoteWidgetTextView, sharedPreferences.getString("plainNoteText", ""));
         views.setInt(R.id.plainNoteWidgetTextView, "setBackgroundColor", sharedPreferences.getInt("plainNotePrefBGColor", 0xdd222222));
         views.setInt(R.id.plainNoteWidgetTextView, "setTextColor", sharedPreferences.getInt("plainNotePrefTextColor", 0xffffffff));
-        views.setOnClickPendingIntent(R.id.plainNoteWidgetTextView, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
+        views.setOnClickPendingIntent(R.id.plainNoteWidgetTextView, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), PendingIntent.FLAG_IMMUTABLE));
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);

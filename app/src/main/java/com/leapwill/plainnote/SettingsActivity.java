@@ -1,14 +1,14 @@
 package com.leapwill.plainnote;
 
-import android.app.Activity;
 import android.os.Bundle;
+import androidx.fragment.app.FragmentActivity;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, SettingsFragment.newInstance())
                 .commit();
     }
